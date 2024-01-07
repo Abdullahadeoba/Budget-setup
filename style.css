@@ -10,7 +10,7 @@ body{
 #table-container{
     border-radius: 10px;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-between;
     display: flex;
     overflow: auto;
     overflow-x: auto;
@@ -20,11 +20,12 @@ body{
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
     position: absolute;
     top: 50%;
-    left: 60%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 table{
-    width: inherit;
+    /* width: inherit; */
+    
 }
 tr{
     margin-bottom: 5px;
@@ -43,6 +44,7 @@ th{
     color: white;
     height: 60px;
     text-align: center;
+    justify-content: space-between;
 }
 ::placeholder,input{
     text-align: center;

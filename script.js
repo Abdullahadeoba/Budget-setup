@@ -29,7 +29,83 @@ function add_expense(date = 'N/A', type = 'N/A', amount = 'N/A', description = '
     // This logic shown below is resposible for color-coding our different type of expenses to help you get a good idea of which category are you spending most on 
 
     switch (Type.value){
-        case 'Food'
-        class_name = 'Food'
+        case 'Food':
+             class_name = 'Food'
+        break;
+
+        case 'Clothing':
+            class_name = 'Clothing'
+        break;
+
+        case 'Transportation':
+             class_name = 'Transportation'
+        break;
+
+        case 'Debt':
+            class_name = 'Debt'
+        break;
+
+        case 'Education':
+            class_name = 'Education'
+        break;
+
+        case 'Miscellaneous':
+            class_name = 'Miscellaneous'
+            break;
+
     }
+
+    // Add expense to the expense_records array
+    expense_records.push({date, type, amount, description, class_name})
+    // Update the local storage with the expense _records array
+    UpdateLocalStorage()  // we also need to init this function as well a little bit
+    // Renders the table with the updated expense_records array
+    renderTable()
+
 }
+
+function delete_expense(index) {
+    // This function might be useful in case you typed in the wrong expense which allow you to delete it similar to a TO-DO list
+    expense_records.splice(index,1)
+    UpdateLocalStorage()
+    // Renders the table with the updated expense_records array
+    renderTable()
+}
+
+function renderTable() {
+    // Clear the table before rendering the updated data
+
+    Table.innerHTML = `<tr>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Description</th>
+                            <th>Action</th>
+                        </tr>`
+
+    // Render each expense record to the table
+
+    expense_records.forEach((expense,index) =>{
+        let color_code = expense.class_name
+
+        Table.innerHTML += `<tr>
+                                <td class = "${color_code}">${expense.date}</td>
+                                <td class = "${color_code}">${expense.type}</td>
+                                <td class = "${color_code}">${expense.amount}</td>
+                                <td class = "${color_code}">${expense.description}</td>
+                                <td class = "${color_code}"><button onclick = "delete_expense(${index})" class
+                                 = btn btn-primary btn-sm>Delete</button></td>
+
+
+
+                            </tr>`
+                                
+        
+    })
+}
+
+function UpdateLocalStorage(){
+    localStorage.setItem('expense_records', JSON.stringify(expense_records));
+}
+
+button.addEventListener('click', add_expense)
