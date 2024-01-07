@@ -26,3 +26,42 @@ body{
 table{
     width: inherit;
 }
+tr{
+    margin-bottom: 5px;
+}
+td{
+    text-align: center;
+    background: #4738ec;
+    color: white;
+    font-family: sans-serif;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+th{
+    background: rgb(0, 32, 100);
+    color: white;
+    height: 60px;
+    text-align: center;
+}
+::placeholder,input{
+    text-align: center;
+}
+td.Food{
+    background: #4738ec;
+}
+td.Clothing{
+    background: #38eccb;
+}
+td.Transportation{
+    background: #4bce6a;
+}
+td.Debt{
+    background: #f4445b;
+}
+td.Education{
+    background: #0b5ad8;
+}
+td.Miscellaneous{
+    background: #017cf0bb;
+}
