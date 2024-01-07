@@ -47,7 +47,7 @@ th{
 ::placeholder,input{
     text-align: center;
 }
-td.Food{
+td.food{
     background: #4738ec;
 }
 td.Clothing{
@@ -64,4 +64,16 @@ td.Education{
 }
 td.Miscellaneous{
     background: #017cf0bb;
+}
+#container{
+    background: rgb(52, 70, 232);
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    gap: 10px;
+    padding: 10px;
+}
+button{
+    place-self: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    width: 50%;
 }
