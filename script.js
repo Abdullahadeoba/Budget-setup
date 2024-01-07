@@ -52,7 +52,6 @@ function add_expense(date = 'N/A', type = 'N/A', amount = 'N/A', description = '
         case 'Miscellaneous':
             class_name = 'Miscellaneous'
             break;
-
     }
 
     // Add expense to the expense_records array
@@ -61,6 +60,7 @@ function add_expense(date = 'N/A', type = 'N/A', amount = 'N/A', description = '
     UpdateLocalStorage()  // we also need to init this function as well a little bit
     // Renders the table with the updated expense_records array
     renderTable()
+    saveData()
 
 }
 
@@ -70,6 +70,7 @@ function delete_expense(index) {
     UpdateLocalStorage()
     // Renders the table with the updated expense_records array
     renderTable()
+    saveData()
 }
 
 function renderTable() {
@@ -109,3 +110,12 @@ function UpdateLocalStorage(){
 }
 
 button.addEventListener('click', add_expense)
+
+
+function saveData(){
+    localStorage.setItem("data", expense_records.innerHTML)
+}
+function showTask(){
+    expense_records.innerHTML = localStorage.getItem("data")
+}
+showTask();
