@@ -95,7 +95,7 @@ function renderTable() {
                                 <td class = "${color_code}">$${expense.amount}</td>
                                 <td class = "${color_code}">${expense.description}</td>
                                 <td class = "${color_code}"><button onclick = "delete_expense(${index})" class
-                                 = btn btn-primary btn-sm>Delete</button></td>
+                                 = btn btn-secondary btn-sm>Delete</button></td>
 
 
 
