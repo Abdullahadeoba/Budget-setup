@@ -92,7 +92,7 @@ function renderTable() {
         Table.innerHTML += `<tr>
                                 <td class = "${color_code}">${expense.date}</td>
                                 <td class = "${color_code}">${expense.type}</td>
-                                <td class = "${color_code}">$${expense.amount}</td>
+                                <td class = "${color_code}">💲${expense.amount}</td>
                                 <td class = "${color_code}">${expense.description}</td>
                                 <td class = "${color_code}"><button onclick = "delete_expense(${index})" class
                                  = btn btn-secondary btn-sm>Delete</button></td>
